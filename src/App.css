@@ -1,11 +1,25 @@
-.login-button {display: flex; justify-content: flex-end; align-items: center; margin:20px;}
+div, p, ul, li {padding:0; margin:0;}
+.login-button {display: flex; justify-content: flex-end; align-items: center; margin:20px; cursor: pointer;}
 .login-button svg {margin-right:10px;}
-.logo {display: flex; justify-content: center;}
+.logo {display: flex; justify-content: center; cursor: pointer;}
 .logo img {width: 100px;}
 
-.menu-area {position: relative;}
+.menu-area {position: relative; margin-top:50px; margin-bottom:50px;}
 .menu-list {display: flex; justify-content: center; list-style: none;}
-.menu-list li {padding:10px;}
+.menu-list li {padding:10px; cursor: pointer;}
 
 .search-area {position:absolute; right:0; top:0; border-bottom:1px solid #000;}
 .search-area input {border:none; padding:5px 0;}
+
+.card-wrap {margin-bottom:50px; cursor: pointer;}
+.card-wrap .img {overflow: hidden;}
+.card-wrap .img img {width:100%; transition: .3s ease-in-out;}
+.card-wrap .img:hover img {transform: scale(1.05);}
+.card-wrap .info {margin-top:20px;}
+.card-wrap .info p {margin-bottom:2px;}
+.card-wrap .info .choice {font-size: 12px; color:#838383; text-transform: uppercase; font-weight: bold;}
+.card-wrap .info .new {font-size: 12px; color:#444;}
+
+.detail-img {display: flex; justify-self: flex-end;}
+.detail-info .title {font-size: 22px; font-weight: bold;}
+.detail-info .choice {font-size:12px; color:#838383;}
