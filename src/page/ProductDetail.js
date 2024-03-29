@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Col, Row, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Container, Col, Row, Dropdown, DropdownButton, Button } from 'react-bootstrap';
 
 const ProductDetail = () => {
   let{id} = useParams();
@@ -33,6 +33,7 @@ const ProductDetail = () => {
                 ))}
               </DropdownButton>
             </div>
+            <Button variant="outline-primary">추가</Button>
           </div>
         </Col>
       </Row>
