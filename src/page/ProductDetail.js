@@ -18,10 +18,10 @@ const ProductDetail = () => {
   return (
     <Container>
       <Row>
-        <Col className='detail-img'>
+        <Col xs={12} md={6} className='detail-img'>
           <img src={product?.img} alt=''/>
         </Col>
-        <Col>
+        <Col xs={12} md={6}>
           <div className='detail-info'>
             <p className='title'>{product?.title}</p>
             <p className='price'>₩{product?.price}</p>
