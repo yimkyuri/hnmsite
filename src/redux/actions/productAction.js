@@ -1,10 +1,12 @@
+import { productActions } from "../reducers/productReducer";
+
 function getProducts(searchQuery) {
     return async(dispatch) => {
         let url =`https://my-json-server.typicode.com/yimkyuri/hnmsite/products?q=${searchQuery}`;
         let response = await fetch(url);
         let data = await response.json();
-        // setProductList(data);
-        dispatch({type: "GET_PRODUCT_SUCCESS", payload:{data}})
+        // dispatch({type: "GET_PRODUCT_SUCCESS", payload:{data}})
+        dispatch(productActions.getAllProduct({ data }))
     }
 }
 
@@ -13,8 +15,8 @@ function getProductDetail(id) {
         let url = `https://my-json-server.typicode.com/yimkyuri/hnmsite/products/${id}`;
         let response = await fetch(url);
         let data = await response.json();
-        // setProduct(data);
-        dispatch({type: "GET_PRODUCT_DETAIL_SUCCESS", payload:{data}})
+        // dispatch({type: "GET_PRODUCT_DETAIL_SUCCESS", payload:{data}})
+        dispatch(productActions.getSingleProduct({ data }))
     }
 }
 
