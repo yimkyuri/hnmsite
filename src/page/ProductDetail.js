@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Col, Row, Dropdown, DropdownButton, Button } from 'react-bootstrap';
-import { productAction } from '../redux/actions/productAction';
+import { fetchProductDetail } from '../redux/slices/productSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ProductDetail = () => {
@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const product = useSelector((state) => state.product.selectedItem);
   const dispatch = useDispatch();
   const getProductDetail = () => {
-    dispatch(productAction.getProductDetail(id))
+    dispatch(fetchProductDetail(id));
   }
   useEffect(() => {
     getProductDetail();
