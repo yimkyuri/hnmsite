@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { authenticateAction } from '../redux/actions/authenticateAction';
 
-const Navbar = ({ authenticate, setAuthenticate }) => {
+const Navbar = () => {
+    const dispatch = useDispatch();
+    const authenticate = useSelector((state) => state.auth.authenticate);
+
+    const logout = () => {
+        dispatch(authenticateAction.logout())
+    }
+    useEffect(() => {
+        logout();
+        // eslint-disable-next-line
+    }, [])
+    
     const menuList = [
         "여성",
         "Devided",
@@ -39,8 +52,8 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
             <div className="burger-menu hide">
                 <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
             </div>
-            {authenticate ? (
-            <div className='login-button' onClick={() => setAuthenticate(false)}>
+            {authenticate === true? (
+            <div className='login-button' onClick={logout}>
                 <FontAwesomeIcon icon={faUser} /> <div>로그아웃</div>
             </div>
             ) : (
